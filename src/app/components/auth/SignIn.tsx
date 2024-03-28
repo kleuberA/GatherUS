@@ -8,11 +8,11 @@ import useSupabase from "@/hooks/useSupabase";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { GlobeComponent } from "../Globe";
+import Loader from "@/components/Loader";
 import toast from "react-hot-toast";
 import { useState } from "react";
 import Link from "next/link";
 import { z } from "zod";
-import Loader from "@/components/Loader";
 
 const FormSchema = z.object({
     email: z.string().email(),
@@ -46,7 +46,7 @@ export default function SignInComponent() {
         setLoading(false);
 
         if (error) {
-            toast.error(error.message,
+            toast.error(error.message + "!",
                 {
                     style: {
                         borderRadius: '3px',
@@ -63,7 +63,7 @@ export default function SignInComponent() {
                         color: '#fff',
                     },
                 });
-            router.push('/notes');
+            router.push('/home');
         }
         form.reset();
     }

@@ -6,13 +6,14 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import useSupabase from "@/hooks/useSupabase";
 import { useForm } from "react-hook-form";
+import { GlobeComponent } from "../Globe";
+import Loader from "@/components/Loader";
+import { motion } from "framer-motion";
 import toast from "react-hot-toast";
 import { useState } from "react";
 import Link from "next/link";
 import { z } from "zod";
-import Loader from "@/components/Loader";
-import { GlobeComponent } from "../Globe";
-import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";
 
 const FormSchema = z.object({
     name: z.string().min(3, { message: "Name must be at least 3 characters." }),
@@ -22,6 +23,7 @@ const FormSchema = z.object({
 
 export default function SignUpComponent() {
     const [loading, setLoading] = useState(false);
+    const router = useRouter();
     const supabase = useSupabase();
 
     const form = useForm<z.infer<typeof FormSchema>>({
@@ -69,6 +71,7 @@ export default function SignUpComponent() {
                 });
         }
         form.reset();
+        router.push('/auth/signin');
     }
 
 
