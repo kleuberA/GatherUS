@@ -11,6 +11,8 @@ import { useState } from "react";
 import Link from "next/link";
 import { z } from "zod";
 import Loader from "@/components/Loader";
+import { GlobeComponent } from "../Globe";
+import { motion } from "framer-motion";
 
 const FormSchema = z.object({
     name: z.string().min(3, { message: "Name must be at least 3 characters." }),
@@ -71,13 +73,21 @@ export default function SignUpComponent() {
 
 
     return (
-        <section className="w-full h-screen flex justify-center items-center">
-            <div className="bg-secondary/50 flex flex-col gap-1 w-[25dvw] rounded-sm h-[70dvh] border border-ring">
+        <section className="w-full h-screen flex flex-row justify-center items-center overflow-hidden">
+            <div className="flex-1 h-full">
+                <GlobeComponent />
+            </div>
+            <motion.div
+                initial={{ opacity: 0, translateX: 100 }}
+                animate={{ opacity: 1, translateX: 0 }}
+                transition={{ duration: 2 }}
+                className="bg-secondary/50 flex flex-col gap-1 w-[40dvw] rounded-sm h-full justify-center">
                 <div className="p-4 flex flex-col gap-1">
                     <h1 className="text-xl text-primary font-bold">SignUp Now!</h1>
                     <span className="text-sm text-accent-foreground">SignUp</span>
                 </div>
-                <div className="p-4 w-full">
+                <div
+                    className="p-4 w-full">
                     <Form {...form}>
                         <form onSubmit={form.handleSubmit(onSubmit)} className="w-full space-y-3">
                             <FormField
@@ -134,7 +144,7 @@ export default function SignUpComponent() {
                         </span>
                     </div>
                 </div>
-            </div>
+            </motion.div>
         </section>
     )
 }
