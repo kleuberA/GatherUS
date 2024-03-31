@@ -3,7 +3,7 @@ import { HouseLine, PlusCircle, User } from "@phosphor-icons/react";
 const ItensMenu = [
     {
         title: 'Home',
-        path: '/',
+        path: '/home',
         icon: <HouseLine size={22} />
     },
     {
