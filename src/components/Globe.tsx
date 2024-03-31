@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
 import React from "react";
 
-const World = dynamic(() => import("../../components/ui/globe").then((m) => m.World), {
+const World = dynamic(() => import("./ui/globe").then((m) => m.World), {
     ssr: false,
 });
 
