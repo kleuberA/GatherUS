@@ -1,10 +1,10 @@
 import Menu from "@/components/menu/Menu";
-import { ToggleTheme } from "@/components/theme/toggle-theme";
+import SideMenu from "@/components/menu/Side/SideMenu";
 
 export default function HomePage() {
     return (
         <div className="bg-background min-h-screen">
-            <ToggleTheme />
+            <SideMenu />
             <Menu />
         </div>
     )
