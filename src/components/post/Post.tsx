@@ -4,6 +4,12 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem,
 import { Button } from "../ui/button";
 import Image from "next/image";
 import { Dialog, DialogClose, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "../ui/dialog";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
 
 interface PostProps {
     type: number;
@@ -111,6 +117,39 @@ export default function Post(props: PostProps) {
                                 <span className="hover:text-blue-500 cursor-pointer"><Chat size={20} /></span>
                             </div>
                         </>
+                    )}
+                    {props.type === 3 && (
+                        <div className="relative z-0 flex flex-col gap-3">
+                            <div className="text-justify">
+                                <span className="text-sm">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</span>
+                            </div>
+                            <Swiper
+                                modules={[Navigation, Pagination, Scrollbar]}
+                                spaceBetween={50}
+                                slidesPerView={1}
+                                navigation
+                                pagination={{ clickable: true }}
+                                onSlideChange={() => console.log('slide change')}
+                                className="w-full min-h-[20dvh]"
+                            >
+                                <SwiperSlide>
+                                    <Image src="https://source.unsplash.com/random/800x600" width={800} height={600} alt={""} className="rounded-md" />
+                                </SwiperSlide>
+                                <SwiperSlide>
+                                    <Image src="https://source.unsplash.com/random/800x600" width={800} height={600} alt={""} className="rounded-md" />
+                                </SwiperSlide>
+                                <SwiperSlide>
+                                    <Image src="https://source.unsplash.com/random/800x600" width={800} height={600} alt={""} className="rounded-md" />
+                                </SwiperSlide>
+                                <SwiperSlide>
+                                    <Image src="https://source.unsplash.com/random/800x600" width={800} height={600} alt={""} className="rounded-md" />
+                                </SwiperSlide>
+                            </Swiper>
+                            <div className="flex flex-row gap-3">
+                                <span className="hover:text-red-500 cursor-pointer"><Heart size={20} /></span>
+                                <span className="hover:text-blue-500 cursor-pointer"><Chat size={20} /></span>
+                            </div>
+                        </div>
                     )}
                 </div>
             </div>

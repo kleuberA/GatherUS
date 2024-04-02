@@ -74,6 +74,7 @@ export default function SideMenu() {
                         <div className="flex flex-col gap-5">
                             <Post type={1} />
                             <Post type={2} />
+                            <Post type={3} />
                         </div>
                     </div>
                 </ResizablePanel>
