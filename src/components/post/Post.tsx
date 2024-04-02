@@ -1,8 +1,9 @@
-import { Chat, DotsThreeVertical, ExclamationMark, Heart, PencilSimple, TrashSimple } from "@phosphor-icons/react";
+import { Chat, DotsThree, DotsThreeVertical, ExclamationMark, Heart, PencilSimple, TrashSimple } from "@phosphor-icons/react";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "../ui/dropdown-menu";
 import { Button } from "../ui/button";
 import Image from "next/image";
+import { Dialog, DialogClose, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "../ui/dialog";
 
 interface PostProps {
     type: number;
@@ -58,6 +59,45 @@ export default function Post(props: PostProps) {
                             <div className="flex flex-row gap-3">
                                 <span className="hover:text-red-500 cursor-pointer"><Heart size={20} /></span>
                                 <span className="hover:text-blue-500 cursor-pointer"><Chat size={20} /></span>
+                            </div>
+                            <div className="w-full h-auto bg-primary p-3 text-accent rounded-md flex flex-col gap-1">
+                                <span className="text-accent text-xs">Comments</span>
+                                <div className="flex flex-row justify-between gap-4">
+                                    <div className="flex flex-row gap-2 items-center">
+                                        <Avatar className="rounded-md w-6 h-6">
+                                            <AvatarImage src="https://github.com/shadcn.png" />
+                                            <AvatarFallback>CN</AvatarFallback>
+                                        </Avatar>
+                                        <div className="flex flex-col">
+                                            <div className="flex flex-row gap-1">
+
+                                                <span className="text-accent text-xs"><span className="text-accent text-xs font-bold">Silva </span> - reader will be distracted distracted distracted distractedby the readable content of a page</span></div>
+                                            <div className="flex flex-row gap-3 items-center">
+                                                <span className="text-xs text-accent">1s</span>
+                                                <span className="text-xs text-accent">2 Likes</span>
+                                                <Dialog>
+                                                    <DialogTrigger>
+                                                        <DotsThree size={20} className="cursor-pointer" />
+                                                    </DialogTrigger>
+                                                    <DialogContent>
+                                                        <DialogHeader>
+                                                            <DialogTitle>Info</DialogTitle>
+                                                            <DialogDescription>
+                                                                <Button variant="destructive" className="w-full">Report</Button>
+                                                            </DialogDescription>
+                                                        </DialogHeader>
+                                                        <DialogClose>
+                                                            <Button variant="ghost" className="w-full">Cancel</Button>
+                                                        </DialogClose>
+                                                    </DialogContent>
+                                                </Dialog>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="flex items-center">
+                                        <span className="hover:text-red-500 cursor-pointer"><Heart size={15} /></span>
+                                    </div>
+                                </div>
                             </div>
                         </>
                     )}
