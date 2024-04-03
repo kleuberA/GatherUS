@@ -1,17 +1,20 @@
 "use client"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from "@/components/ui/resizable";
+import HomeComponent from "@/components/home/HomeComponent";
+import { SignOut } from "@phosphor-icons/react";
+import { Button } from "@/components/ui/button";
+import { usePathname } from "next/navigation";
 import ItensSideMenu from "./ItensSideMenu";
 import { useState } from "react";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { SignOut } from "@phosphor-icons/react";
-import Post from "@/components/post/Post";
+import Messages from "@/components/messages/Messages";
 
 export default function SideMenu() {
 
     const [size, setSize] = useState<number>();
     const itensSideMenu = ItensSideMenu;
+    const pathname = usePathname();
 
     return (
         <div className="h-screen overflow-hidden w-full">
@@ -24,12 +27,12 @@ export default function SideMenu() {
                         <div className="flex flex-col gap-5 h-[80dvh]">
                             {itensSideMenu.map((item, index) => (
                                 size && size > 9 ? (
-                                    <Link href={item.path} key={index} className="p-2 bg-secondary hover:bg-secondary/50 transition-all duration-300 items-center w-full rounded-sm flex flex-row gap-3">
+                                    <Link href={item.path} key={index} className={`p-2 ${pathname === item.path ? "bg-primary text-accent hover:bg-primary/50" : "bg-secondary hover:bg-secondary/50"} transition-all duration-300 items-center w-full rounded-sm flex flex-row gap-3`}>
                                         {item.icon}
                                         <span className="">{item.title}</span>
                                     </Link>
                                 ) : (
-                                    <Link href={item.path} key={index} className="p-2 bg-secondary hover:bg-secondary/50 transition-all duration-300 items-center w-full rounded-sm flex flex-row gap-3">
+                                    <Link href={item.path} key={index} className={`p-2 ${pathname === item.path ? "bg-primary text-accent hover:bg-primary/50" : "bg-secondary hover:bg-secondary/50"} transition-all duration-300 items-center w-full rounded-sm flex flex-row gap-3`}>
                                         <TooltipProvider>
                                             <Tooltip >
                                                 <TooltipTrigger asChild>
@@ -70,13 +73,12 @@ export default function SideMenu() {
                 </ResizablePanel>
                 <ResizableHandle withHandle />
                 <ResizablePanel defaultSize={75}>
-                    <div className="flex h-screen items-center p-6 flex-col gap-5 overflow-y-auto pb-32">
-                        <div className="flex flex-col gap-5">
-                            <Post type={1} />
-                            <Post type={2} />
-                            <Post type={3} />
-                        </div>
-                    </div>
+                    {pathname === "/home" && (
+                        <HomeComponent />
+                    )}
+                    {pathname === "/messages" && (
+                        <Messages />
+                    )}
                 </ResizablePanel>
             </ResizablePanelGroup>
         </div>
