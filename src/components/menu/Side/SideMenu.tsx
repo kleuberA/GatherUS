@@ -8,6 +8,10 @@ import { usePathname } from "next/navigation";
 import ItensSideMenu from "./ItensSideMenu";
 import { useState } from "react";
 import Link from "next/link";
+import SettingsComponent from "@/components/settings/SettingsComponent";
+import HomeComponent from "@/components/home/HomeComponent";
+import Messages from "@/components/messages/Messages";
+import MessagesComponent from "@/components/messages/Messages";
 
 export default function SideMenu() {
 
@@ -72,8 +76,17 @@ export default function SideMenu() {
                 </ResizablePanel>
                 <ResizableHandle withHandle />
                 <ResizablePanel defaultSize={75}>
+                    {pathname === "/home" && (
+                        <HomeComponent />
+                    )}
+                    {pathname === "/messages" && (
+                        <MessagesComponent />
+                    )}
                     {pathname === "/notifications" && (
                         <Notification />
+                    )}
+                    {pathname === "/settings" && (
+                        <SettingsComponent />
                     )}
                 </ResizablePanel>
             </ResizablePanelGroup>

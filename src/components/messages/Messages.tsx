@@ -2,10 +2,8 @@ import { PaperPlaneRight, Paperclip } from "@phosphor-icons/react";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import { Button } from "../ui/button";
 
-interface MessagesProps {
 
-}
-export default function Messages(props: MessagesProps) {
+export default function MessagesComponent() {
     return (
         <section className="w-full h-[calc(100dvh_-_4rem)]">
             <div className="w-full h-full flex flex-row">
