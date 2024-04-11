@@ -1,14 +1,13 @@
 "use client"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from "@/components/ui/resizable";
-import HomeComponent from "@/components/home/HomeComponent";
+import Notification from "@/components/notifications/Notification";
 import { SignOut } from "@phosphor-icons/react";
 import { Button } from "@/components/ui/button";
 import { usePathname } from "next/navigation";
 import ItensSideMenu from "./ItensSideMenu";
 import { useState } from "react";
 import Link from "next/link";
-import Messages from "@/components/messages/Messages";
 
 export default function SideMenu() {
 
@@ -73,11 +72,8 @@ export default function SideMenu() {
                 </ResizablePanel>
                 <ResizableHandle withHandle />
                 <ResizablePanel defaultSize={75}>
-                    {pathname === "/home" && (
-                        <HomeComponent />
-                    )}
-                    {pathname === "/messages" && (
-                        <Messages />
+                    {pathname === "/notifications" && (
+                        <Notification />
                     )}
                 </ResizablePanel>
             </ResizablePanelGroup>

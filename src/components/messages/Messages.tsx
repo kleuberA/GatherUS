@@ -1,6 +1,5 @@
 import { PaperPlaneRight, Paperclip } from "@phosphor-icons/react";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
-import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 
 interface MessagesProps {
