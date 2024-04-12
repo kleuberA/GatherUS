@@ -11,7 +11,7 @@ export default function MessagesComponent() {
                     <h1 className="text-accent-foreground text-xl tracking-wider">Friends</h1>
                     <div className="flex flex-col gap-3 pt-3 overflow-y-auto h-full pb-5 scrollbar-hide">
                         {Array.isArray(new Array(20).fill(0)) && new Array(10).fill(0).map((_, index) => (
-                            <div key={index} className="flex flex-row gap-2 items-center cursor-pointer hover:bg-secondary transition-all duration-300 p-2 rounded-md">
+                            <div key={index} className={`flex flex-row gap-2 ${index === 0 && 'bg-secondary hover:bg-secondary/50'} items-center cursor-pointer hover:bg-secondary transition-all duration-300 p-2 rounded-md`}>
                                 <Avatar className="rounded-md w-7 h-7">
                                     <AvatarImage src="https://github.com/shadcn.png" />
                                     <AvatarFallback>CN</AvatarFallback>
