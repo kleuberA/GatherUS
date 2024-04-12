@@ -12,6 +12,7 @@ import SettingsComponent from "@/components/settings/SettingsComponent";
 import HomeComponent from "@/components/home/HomeComponent";
 import Messages from "@/components/messages/Messages";
 import MessagesComponent from "@/components/messages/Messages";
+import ExploreComponent from "@/components/explore/ExploreComponent";
 
 export default function SideMenu() {
 
@@ -81,6 +82,9 @@ export default function SideMenu() {
                     )}
                     {pathname === "/messages" && (
                         <MessagesComponent />
+                    )}
+                    {pathname === "/explore" && (
+                        <ExploreComponent type={1} />
                     )}
                     {pathname === "/notifications" && (
                         <Notification />
