@@ -1,14 +1,19 @@
 "use client"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from "@/components/ui/resizable";
-import HomeComponent from "@/components/home/HomeComponent";
+import Notification from "@/components/notifications/Notification";
 import { SignOut } from "@phosphor-icons/react";
 import { Button } from "@/components/ui/button";
 import { usePathname } from "next/navigation";
 import ItensSideMenu from "./ItensSideMenu";
 import { useState } from "react";
 import Link from "next/link";
+import SettingsComponent from "@/components/settings/SettingsComponent";
+import HomeComponent from "@/components/home/HomeComponent";
 import Messages from "@/components/messages/Messages";
+import MessagesComponent from "@/components/messages/Messages";
+import ExploreComponent from "@/components/explore/ExploreComponent";
+import ProfileComponent from "@/components/profile/Profile";
 
 export default function SideMenu() {
 
@@ -77,7 +82,19 @@ export default function SideMenu() {
                         <HomeComponent />
                     )}
                     {pathname === "/messages" && (
-                        <Messages />
+                        <MessagesComponent />
+                    )}
+                    {pathname === "/explore" && (
+                        <ExploreComponent type={1} />
+                    )}
+                    {pathname === "/profile" && (
+                        <ProfileComponent />
+                    )}
+                    {pathname === "/notifications" && (
+                        <Notification />
+                    )}
+                    {pathname === "/settings" && (
+                        <SettingsComponent />
                     )}
                 </ResizablePanel>
             </ResizablePanelGroup>
