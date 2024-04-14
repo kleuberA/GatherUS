@@ -14,6 +14,7 @@ import Messages from "@/components/messages/Messages";
 import MessagesComponent from "@/components/messages/Messages";
 import ExploreComponent from "@/components/explore/ExploreComponent";
 import ProfileComponent from "@/components/profile/Profile";
+import SearchComponent from "@/components/search/Search";
 
 export default function SideMenu() {
 
@@ -80,6 +81,9 @@ export default function SideMenu() {
                 <ResizablePanel defaultSize={75}>
                     {pathname === "/home" && (
                         <HomeComponent />
+                    )}
+                    {pathname === "/search" && (
+                        <SearchComponent />
                     )}
                     {pathname === "/messages" && (
                         <MessagesComponent />
