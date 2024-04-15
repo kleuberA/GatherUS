@@ -1,4 +1,17 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# GatherUs
+
+Essa aplicação é um rede social no qual foi feita somente o front-end, ou seja ainda nao possui um back-end. É uma rede social simples igual todas as outras, sendo o diferencial o design que foi aplicado no desenvolvimento dessa aplicação, sendo utilizado a lib ShadCn para realizar o design, é uma aplicação feita somente para web, nao foi feita adaptação ou responsividade do sistema para ficar compativel com smartphones.
+
+This application is a social network in which only the front-end was created, that is, it does not yet have a back-end. It is a simple social network like all the others, the difference being the design that was applied in the development of this application, using the ShadCn lib to carry out the design, it is an application made only for the web, no adaptation or responsiveness of the system was made to it. be compatible with smartphones.
+
+## Stack utilizada
+
+-   ReactJs
+-   NextJs
+-   ShadCn
+-   TailwindCss
+-   Typescript
+-   Phosphor Icons
 
 ## Getting Started
 
@@ -16,21 +29,22 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Screenshots
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+![App Screenshot](https://imgur.com/XqcBBRH.png)
 
-## Learn More
+![App Screenshot](https://imgur.com/ucrucYL.png)
 
-To learn more about Next.js, take a look at the following resources:
+![App Screenshot](https://imgur.com/OWWGIVA.png)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+![App Screenshot](https://imgur.com/AJCiE4Y.png)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+![App Screenshot](https://imgur.com/tQjWnyt.png)
 
-## Deploy on Vercel
+![App Screenshot](https://imgur.com/xAzt3Lx.png)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+![App Screenshot](https://imgur.com/EClRqrZ.png)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+![App Screenshot](https://imgur.com/r4xRO0V.png)
+
+![App Screenshot](https://imgur.com/1J2KXGP.png)
